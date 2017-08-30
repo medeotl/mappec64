@@ -60,6 +60,7 @@ for f in os.listdir("./"):
         os.remove(f)
 
 
+
 mappa.palette = Image.open(f).palette
 
 # rimuovo gli screenshoot in cropped
