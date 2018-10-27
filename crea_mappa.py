@@ -43,11 +43,16 @@ for f in os.listdir("./"):
         y2 = 211
         img = img.crop( (x1,y1, x2,y2) )
         print(img.size)
-        img.save("./cropped/"+f)
+        img.save("./cropped/" + f)
+
+# approfitto per memorizzare la palette
+c64palette = Image.open(f).palette
 
 # creo mappa vuota (min_x e max_y servono per conversione coordinate)
 os.chdir("./cropped")
 mappa, min_x, max_y = crea_mappa_vuota()
+
+mappa.palette = c64palette
 
 # incollo i vari screenshot nella mappa
 for f in os.listdir("./"):
@@ -59,13 +64,7 @@ for f in os.listdir("./"):
         mappa.paste( Image.open(f), (x,y) )
         os.remove(f)
 
-
-
-mappa.palette = Image.open(f).palette
-
 # rimuovo gli screenshoot in cropped
-
-
 os.chdir("..")
 os.chdir("..")
 mappa.save("mappa.bmp")
