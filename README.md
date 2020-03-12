@@ -3,6 +3,7 @@
 Il programma serve a creare mappe partendo da screenshot di giochi per c64 con flip-screen presi tramite emulatore.
 
 Gli screenshot:
+
 - vanno posti in `./screenshots`
 - la directory `./screenshots` deve contenere una sottodirectory `./cropped`
 - devo essere file bmp
