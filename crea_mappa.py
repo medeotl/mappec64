@@ -31,16 +31,16 @@ except FileNotFoundError:
     "Directory create.\n \
     Inserire gli screenshots nella directory apposita e riprovare." )
 
-# rimuovo cornici (e extra spazio) dagli screenshot
+# rimuovo cornice (e extra spazio) dagli screenshot
 for f in os.listdir("./"):
-    # file è una stringa contenente il nome del file
+    # f è una stringa contenente il nome del file
     if f.endswith(".bmp"):
         img = Image.open(f)
         print(img.size)
         x1 = 32
         y1 = 35
         x2 = 352
-        y2 = 211
+        y2 = 235
         img = img.crop( (x1,y1, x2,y2) )
         print(img.size)
         img.save("./cropped/" + f)
